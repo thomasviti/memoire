@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('salut', function(){
+	return 'salut les gens';
+});
+
+Route::get('salut/{slug}-{id}', ['as' => 'salut', function($slug, $id){
+	return route('salut', ['slug' => 'Tezzzst', 'id' => 54]);
+}])->where('name', '[a-z0-9\-]+')->where('id', '[0-9]+');
+
+Route::group(['prefix' => 'admin', 'middleware' => 'ip'], function(){
+	Route::get('salut', function(){
+		return 'toto';
+	});
+});
