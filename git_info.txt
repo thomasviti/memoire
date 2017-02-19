@@ -1,0 +1,9 @@
+git:
+
+git add *
+git status
+git log
+git commit
+git remote add origin https://github.com/thomasviti/memoire.git
+git remote -v
+git push
